@@ -1,12 +1,18 @@
 {
-  "version": "1.2.2",
-  "date": "1405-08-23",
+  "version": "1.2.3",
+  "date": "1405-09-01",
   "notes": [
-    "رفع مشکلات فنی و بهینه‌سازی عملکرد اپ",
-    "پایداری و سرعت بارگذاری برنامه بهبود یافت"
+    "عنوان و توضیحات اپ با عبارت «نرم افزار آلومینیوم» بازنویسی شد تا در جست‌وجو بهتر دیده شود",
+    "داده‌های کاتالوگ، ماشین‌حساب و آلیاژها دیگر به شمارهٔ نسخهٔ اپ گره خورده نیستند؛ از این پس به‌روزرسانی آن‌ها روی سرور بدون انتشار نسخهٔ تازهٔ اپ ممکن است",
+    "آدرس دفتر مرکزی از صفحهٔ تماس برداشته شد",
+    "قاب دور کل صفحه که در کامپیوتر تا اولین کلیک دیده می‌شد برداشته شد",
+    "راهنمای نصب دیگر وعدهٔ اعلان نسخهٔ جدید را نمی‌دهد (اعلان‌ها خاموش هستند)"
   ],
   "notesEn": [
-    "Technical issues fixed and app performance improved",
-    "App stability and loading speed are better now"
+    "The app title and description now include “aluminium software” so the app ranks better in search",
+    "Catalogue, calculator and alloy data are no longer tied to the app version number; they can now be updated on the server without releasing a new app version",
+    "The head-office address was removed from the contact screen",
+    "Removed the frame that appeared around the whole page on desktop until the first click",
+    "The install guide no longer promises new-version notifications (notifications are switched off)"
   ]
 }

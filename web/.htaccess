@@ -4,6 +4,10 @@
 DirectoryIndex index.html
 
 <IfModule mod_headers.c>
+  # Never let a browser guess a file's type from its content: the app ships JSON data
+  # files, and a mis-typed response is what turns a data file into an XSS vector.
+  Header set X-Content-Type-Options "nosniff"
+
   # index.html carries the ?v= query for styles.css / app.js, so it must always be
   # revalidated with the server. Without this rule a returning visitor can be kept on
   # an old shell — the app then says "up to date" while showing old files, and the

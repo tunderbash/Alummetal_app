@@ -445,6 +445,40 @@ body.light .settings-list button:disabled{background:rgba(255,255,255,.6);border
 body.light .settings-list button:disabled:hover{background:rgba(255,255,255,.6);border-color:rgba(20,57,66,.1)}
 .settings-list button:active{transform:scale(.985)}
 .settings-list button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+
+/* <main> is focused programmatically on every screen change (tabindex="-1" so screen
+   readers land on the new content). Desktop browsers then draw a focus ring around the
+   whole shell, which reads as a dark rectangle hugging the app column until the visitor
+   clicks somewhere. The ring is suppressed visually only; the focus itself stays. */
+main:focus,main:focus-visible{outline:none}
+
+/* The head-office address card is gone, so the phone block is now the only child of the
+   contact grid. Let it span the whole row, otherwise the desktop two-column grid would
+   leave it sitting in one half with an empty gap beside it. */
+.contact-grid>.phone-cluster{grid-column:1/-1;width:auto}
+
+/* ------------------------------------------------------------------ crawler copy
+   Real catalogue and alloy tables written into index.html by
+   tools/seo/build_static_seo.py, inside #catalogList / #alloyList. app.js replaces both
+   containers on load, so a visitor with JS never sees this copy; it exists for crawlers
+   that do not run JavaScript (Bing's first pass, social previews, GPTBot/PerplexityBot)
+   and for the no-script case.
+
+   Deliberately NOT display:none — a hidden block is discounted by search engines. The
+   inactive screens are hidden by the `.screen` rule anyway, so a visitor never reaches
+   this markup. The styles below only keep the bare tables readable if they are ever
+   shown (no-JS fallback). */
+#catalogList>.seo-heading,#alloyList>.seo-heading{font-size:17px;margin:14px 0 8px;color:var(--text)}
+#catalogList>.seo-lead,#alloyList>.seo-lead{font-size:11px;line-height:1.9;color:var(--muted);margin:0 0 12px}
+#catalogList>.seo-sheet{margin-bottom:14px}
+#catalogList>.seo-sheet h3{font-size:14px;margin:0 0 3px;color:var(--text)}
+#catalogList>.seo-sheet p{font-size:10px;color:var(--muted);margin:0 0 7px}
+.seo-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+.seo-table{border-collapse:collapse;width:100%;font-size:10px}
+.seo-table th,.seo-table td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.seo-table th{color:var(--orange);font-weight:700;white-space:nowrap}
+.seo-table .seo-code{color:var(--orange);font-family:Arial,sans-serif;direction:ltr}
+.seo-table .seo-num{direction:ltr;text-align:center}
 body.light .settings-list button{background:rgba(255,255,255,.75);border-color:rgba(20,57,66,.14)}
 body.light .settings-list button:hover{background:#fff;border-color:rgba(193,84,26,.4)}
 body.light .settings-list strong{background:rgba(255,117,31,.1);border-color:rgba(193,84,26,.25);color:#c1541a}
