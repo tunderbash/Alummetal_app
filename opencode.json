@@ -9,6 +9,9 @@
         "baseURL": "https://iranrouter.net/api/v1"
       },
       "models": {
+        "deepseek-v4.1-flash": {
+          "name": "DeepSeek V4.1 Flash"
+        },
         "deepseek-v4.1-flash-1017": {
           "name": "DeepSeek V4.1 Flash"
         }
