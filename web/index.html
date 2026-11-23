@@ -88,15 +88,15 @@
   </script>
   <link rel="preload" href="fonts/BYekan.ttf?v=9" as="font" type="font/ttf" crossorigin />
   <link rel="preload" href="img/logo-alummetalarak.png" as="image" />
-  <link rel="manifest" href="manifest.webmanifest?v=1.2.3" />
-  <link rel="icon" href="img/favicon.ico?v=1.2.3" sizes="16x16 32x32 48x48" type="image/x-icon" />
-  <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png?v=1.2.3" />
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png?v=1.2.3" />
-  <link rel="stylesheet" href="styles.css?v=1.2.3" media="print" onload="this.media='all';window.__cssReady=true" />
-  <noscript><link rel="stylesheet" href="styles.css?v=1.2.3" /></noscript>
+  <link rel="manifest" href="manifest.webmanifest?v=1.2.4" />
+  <link rel="icon" href="img/favicon.ico?v=1.2.4" sizes="16x16 32x32 48x48" type="image/x-icon" />
+  <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png?v=1.2.4" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png?v=1.2.4" />
+  <link rel="stylesheet" href="styles.css?v=1.2.4" media="print" onload="this.media='all';window.__cssReady=true" />
+  <noscript><link rel="stylesheet" href="styles.css?v=1.2.4" /></noscript>
   <title>نرم افزار آلومینیوم آلوم متال | محاسبه وزن، کاتالوگ و دانشنامه آلیاژها</title>
   <!-- Search-engine metadata. The canonical URL is the bare domain: the app strips every
-       ?v= query as soon as it loads, so /?v=1.2.3 and / are the same page to a crawler
+       ?v= query as soon as it loads, so /?v=1.2.4 and / are the same page to a crawler
        and must not be counted twice. -->
   <link rel="canonical" href="https://app-alummetal.ir/" />
   <meta name="robots" content="index, follow" />
@@ -138,7 +138,7 @@
 </head>
 <body>
   <div class="boot-screen" id="bootScreen" aria-hidden="true">
-    <img class="boot-logo" src="img/icon-512.png?v=1.2.3" alt="" width="168" height="168" />
+    <img class="boot-logo" src="img/icon-512.png?v=1.2.4" alt="" width="168" height="168" />
     <span class="boot-bar"><i></i></span>
   </div>
   <div class="app-shell" id="appShell">
@@ -148,15 +148,15 @@
         <img src="img/logo-alummetalarak.png" alt="لوگوی آلوم متال" />
       </a>
       <div class="top-actions">
-        <button class="icon-button" id="themeToggle" aria-label="تغییر تم">☼</button>
-        <button class="icon-button" id="fullscreenToggle" aria-label="تمام صفحه">⛶</button>
+        <button class="icon-button" id="themeToggle" aria-label="تغییر تم"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg></button>
+        <button class="icon-button" id="fullscreenToggle" aria-label="تمام صفحه"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4H5.5A1.5 1.5 0 0 0 4 5.5V9M15 4h3.5A1.5 1.5 0 0 1 20 5.5V9M20 15v3.5a1.5 1.5 0 0 1-1.5 1.5H15M9 20H5.5A1.5 1.5 0 0 1 4 18.5V15"/></svg></button>
       </div>
     </header>
 
     <aside class="drawer" id="drawer" aria-hidden="true">
       <div class="drawer-head">
         <img src="img/logo-alummetalarak.png" alt="آلوم متال" />
-        <button class="icon-button" id="drawerClose" aria-label="بستن منو">×</button>
+        <button class="icon-button" id="drawerClose" aria-label="بستن منو"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       </div>
       <p class="eyebrow">منوی آلوم متال</p>
       <nav class="drawer-nav">
@@ -181,14 +181,14 @@
         </div>
 
         <div class="install-banner glass-card" id="installBanner" hidden>
-          <span class="install-icon" aria-hidden="true">⤓</span>
+          <span class="install-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v10m0 0 4-4m-4 4-4-4M5 19h14"/></svg></span>
           <div class="install-copy">
             <strong id="installBannerTitle">اپ آلوم متال را روی صفحه اصلی نصب کنید</strong>
             <small id="installBannerHint">دسترسی سریع‌تر و تمام‌صفحه.</small>
           </div>
           <div class="install-actions">
             <button class="install-go" id="installGo" type="button">نصب</button>
-            <button class="install-x" id="installDismiss" type="button" aria-label="بستن پیشنهاد نصب">×</button>
+            <button class="install-x" id="installDismiss" type="button" aria-label="بستن پیشنهاد نصب"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
           </div>
         </div>
 
@@ -204,7 +204,7 @@
         <div class="factory-strip glass-card advice-strip"><button class="text-link" data-route="contact">دریافت مشاوره تخصصی <span class="ui-arrow" aria-hidden="true"></span></button></div>
       </section>
 
-      <section class="screen" id="calculator" data-screen><div class="page-head"><p class="eyebrow">ابزار دقیق</p><h1>محاسبه وزن مقاطع</h1><p>مقطع و آلیاژ را مطابق محصولات آلوم متال انتخاب کنید.</p></div><div class="form-card glass-card calculator-form"><button class="guide-toggle" id="calculatorGuideToggle" type="button" aria-expanded="false">راهنمای استفاده <span>＋</span></button><div class="calculator-guide" id="calculatorGuide" hidden><strong>چطور وزن را حساب کنیم؟</strong><p>ابتدا مقطع و آلیاژ را انتخاب کنید، سپس طول و اندازه‌های مشخص‌شده روی تصویر را به میلی‌متر وارد کنید. برای چند قطعه، تعداد را تغییر دهید و دکمهٔ محاسبهٔ وزن را بزنید.</p><small>حروف روی تصویر، اندازه‌هایی هستند که باید در کادرهای پایین وارد شوند.</small></div><label>نوع مقطع<select id="shapeSelect"></select></label><figure class="shape-guide" id="shapeGuide"><img id="shapeGuideImage" src="img/shape-guides/round.jpg" alt="راهنمای اندازه‌گذاری مقطع گرد" /><figcaption id="shapeGuideCaption">راهنمای اندازه‌گذاری مقطع</figcaption></figure><label>آلیاژ<select id="alloySelect"></select></label><div class="dimension-grid"><label><span id="fieldOneLabel">طول (میلی‌متر)</span><input id="lengthInput" type="number" min="0" placeholder="مثلاً ۱۰۰۰" /></label><label><span id="fieldTwoLabel">عرض (میلی‌متر)</span><input id="widthInput" type="number" min="0" placeholder="مثلاً ۵۰۰" /></label><label><span id="fieldThreeLabel">ضخامت (میلی‌متر)</span><input id="thicknessInput" type="number" min="0" step="0.1" placeholder="مثلاً ۲" /></label></div><label>تعداد<input id="quantityInput" type="number" min="1" value="1" /></label><button class="primary-button" id="calculateButton">محاسبه وزن <span class="ui-arrow" aria-hidden="true"></span></button><output class="result-box" id="weightResult">نتیجه اینجا نمایش داده می‌شود</output></div></section>
+      <section class="screen" id="calculator" data-screen><div class="page-head"><p class="eyebrow">ابزار دقیق</p><h1>محاسبه وزن مقاطع</h1><p>مقطع و آلیاژ را مطابق محصولات آلوم متال انتخاب کنید.</p></div><div class="form-card glass-card calculator-form"><button class="guide-toggle" id="calculatorGuideToggle" type="button" aria-expanded="false">راهنمای استفاده <span class="guide-toggle-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="calculator-guide" id="calculatorGuide" hidden><strong>چطور وزن را حساب کنیم؟</strong><p>ابتدا مقطع و آلیاژ را انتخاب کنید، سپس طول و اندازه‌های مشخص‌شده روی تصویر را به میلی‌متر وارد کنید. برای چند قطعه، تعداد را تغییر دهید و دکمهٔ محاسبهٔ وزن را بزنید.</p><small>حروف روی تصویر، اندازه‌هایی هستند که باید در کادرهای پایین وارد شوند.</small></div><label>نوع مقطع<select id="shapeSelect"></select></label><figure class="shape-guide" id="shapeGuide"><img id="shapeGuideImage" src="img/shape-guides/round.jpg" alt="راهنمای اندازه‌گذاری مقطع گرد" /><figcaption id="shapeGuideCaption">راهنمای اندازه‌گذاری مقطع</figcaption></figure><label>آلیاژ<select id="alloySelect"></select></label><div class="dimension-grid"><label><span id="fieldOneLabel">طول (میلی‌متر)</span><input id="lengthInput" type="number" min="0" placeholder="مثلاً ۱۰۰۰" /></label><label><span id="fieldTwoLabel">عرض (میلی‌متر)</span><input id="widthInput" type="number" min="0" placeholder="مثلاً ۵۰۰" /></label><label><span id="fieldThreeLabel">ضخامت (میلی‌متر)</span><input id="thicknessInput" type="number" min="0" step="0.1" placeholder="مثلاً ۲" /></label></div><label>تعداد<input id="quantityInput" type="number" min="1" value="1" /></label><button class="primary-button" id="calculateButton">محاسبه وزن <span class="ui-arrow" aria-hidden="true"></span></button><output class="result-box" id="weightResult">نتیجه اینجا نمایش داده می‌شود</output></div></section>
 
 
 
@@ -214,7 +214,7 @@
         <div class="page-head"><p class="eyebrow">یافتن آلیاژ</p><h1>عنصر بده، آلیاژ بگیر</h1><p>مقدار یک عنصر را وارد کنید؛ نزدیک‌ترین آلیاژها با درصد تطابق پیشنهاد می‌شوند.</p></div>
 
         <div class="alloy-lab glass-card lab-card">
-          <div class="lab-heading"><span class="lab-icon">✦</span><div><h2>یک عنصر کافی است</h2><p>لازم نیست همه را پر کنید؛ نتیجه به‌صورت زنده به‌روز می‌شود.</p></div></div>
+          <div class="lab-heading"><span class="lab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c.9 4 1.6 4.7 5.6 5.6-4 .9-4.7 1.6-5.6 5.6-.9-4-1.6-4.7-5.6-5.6 4-.9 4.7-1.6 5.6-5.6Z"/><path d="M18.5 14.5c.4 1.8.7 2.1 2.5 2.5-1.8.4-2.1.7-2.5 2.5-.4-1.8-.7-2.1-2.5-2.5 1.8-.4 2.1-.7 2.5-2.5Z"/></svg></span><div><h2>یک عنصر کافی است</h2><p>لازم نیست همه را پر کنید؛ نتیجه به‌صورت زنده به‌روز می‌شود.</p></div></div>
           <div class="lab-samples" id="labSamples"><span>نمونه سریع:</span></div>
           <div class="element-chips" id="elementChips">
             <label class="element-input"><span><b>Si</b><small>سیلیسیم</small></span><input type="text" inputmode="decimal" autocomplete="off" data-element="Si" placeholder="مثلاً 0.45" /><em>٪</em></label>
@@ -242,7 +242,7 @@
         <div class="page-head"><p class="eyebrow">انتخاب سریع</p><h1>انتخاب آلیاژ بر اساس کاربرد</h1><p>فقط بگویید قطعه برای چه کاری است؛ نزدیک‌ترین آلیاژها با درصد تطابق پیشنهاد می‌شوند.</p></div>
 
         <div class="alloy-lab glass-card lab-card">
-          <div class="lab-heading"><span class="lab-icon">✓</span><div><h2>کاربرد را انتخاب کنید</h2><p>اگر درصد عناصر را نمی‌دانید، از اینجا شروع کنید؛ یک انتخاب کافی است.</p></div></div>
+          <div class="lab-heading"><span class="lab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9 17.5 20 6.5"/></svg></span><div><h2>کاربرد را انتخاب کنید</h2><p>اگر درصد عناصر را نمی‌دانید، از اینجا شروع کنید؛ یک انتخاب کافی است.</p></div></div>
           <div class="use-chips" id="useChips">
             <button type="button" class="use-chip" data-use="profile">پروفیل و درب و پنجره</button>
             <button type="button" class="use-chip" data-use="structure">سازه و صنعت</button>
@@ -272,10 +272,10 @@
     </main>
 
     <nav class="bottom-nav" aria-label="ناوبری اصلی"><a href="./index.html" data-route="home" class="active"><span class="nav-icon home-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span><small>خانه</small></a><a href="./index.html" data-route="catalog"><span class="nav-icon grid-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></span><small>کاتالوگ</small></a><a href="./index.html" data-route="calculator"><span class="nav-icon chart-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18H5zM8 7h8M8 11h2m2 0h2m2 0h2M8 15h2m2 0h2m2 0h2M8 19h8"/></svg></span><small>محاسبه وزن</small></a><a href="./index.html" data-route="contact"><span class="nav-icon phone-icon"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h3l1.7 4.2-2 1.4a13.5 13.5 0 0 0 5.6 5.6l1.4-2 4.2 1.7v3a2 2 0 0 1-2 2C10.5 19.4 4.6 13.5 4.6 6.5a3 3 0 0 1 2-3Z"/></svg></span><small>تماس</small></a></nav>
-    <dialog class="preview-dialog" id="previewDialog"><div class="preview-head"><strong id="previewTitle">پیش‌نمایش</strong><button class="icon-button" id="previewClose" aria-label="بستن پیش‌نمایش">×</button></div><div class="preview-body" id="previewBody"></div></dialog>
+    <dialog class="preview-dialog" id="previewDialog"><div class="preview-head"><strong id="previewTitle">پیش‌نمایش</strong><button class="icon-button" id="previewClose" aria-label="بستن پیش‌نمایش"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div><div class="preview-body" id="previewBody"></div></dialog>
 
     <dialog class="update-dialog" id="updateDialog" aria-labelledby="updateDialogTitle">
-      <div class="update-head"><strong id="updateDialogTitle">نسخهٔ جدید اپ آماده است</strong><button class="icon-button" id="updateClose" type="button" aria-label="بستن پنجره به‌روزرسانی">×</button></div>
+      <div class="update-head"><strong id="updateDialogTitle">نسخهٔ جدید اپ آماده است</strong><button class="icon-button" id="updateClose" type="button" aria-label="بستن پنجره به‌روزرسانی"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
       <div class="update-body">
         <p class="update-version" id="updateVersionLine"></p>
         <ul class="update-notes" id="updateNotes"></ul>
@@ -289,6 +289,6 @@
 
     <div class="toast" id="toast" role="status"></div>
   </div>
-  <script src="app.js?v=1.2.3"></script>
+  <script src="app.js?v=1.2.4"></script>
 </body>
 </html>

@@ -1,12 +1,14 @@
 {
-  "version": "1.2.3",
-  "date": "1405-09-01",
+  "version": "1.2.4",
+  "date": "1405-09-02",
   "notes": [
+    "آیکون‌های دکمهٔ تم، تمام‌صفحه، بستهٔ منو و کاتالوگ یکدست و خوش‌رنگ شدند",
     "رفع مشکل قاب دور صفحه در نسخهٔ کامپیوتر",
     "به‌روزرسانی اطلاعات کاتالوگ و آلیاژها از این پس سریع‌تر اعمال می‌شود",
     "حذف آدرس دفتر مرکزی از صفحهٔ تماس"
   ],
   "notesEn": [
+    "The theme, fullscreen, menu-close and catalogue icons are now consistent and cleaner",
     "Fixed the frame that appeared around the whole page on desktop",
     "Catalogue and alloy information now updates faster",
     "Removed the head-office address from the contact screen"

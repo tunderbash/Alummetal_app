@@ -1,6 +1,26 @@
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 
+// Inline SVG for the top-bar controls, drawn in the same stroke style as every other
+// icon in the app (the font's own sun/moon/expand glyphs were thin and inconsistent).
+const ICON_SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>';
+const ICON_MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg>';
+const ICON_EXPAND = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4H5.5A1.5 1.5 0 0 0 4 5.5V9M15 4h3.5A1.5 1.5 0 0 1 20 5.5V9M20 15v3.5a1.5 1.5 0 0 1-1.5 1.5H15M9 20H5.5A1.5 1.5 0 0 1 4 18.5V15"/></svg>';
+const ICON_COMPRESS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h3.5A1.5 1.5 0 0 0 9 7.5V4M20 9h-3.5A1.5 1.5 0 0 1 15 7.5V4M15 20v-3.5a1.5 1.5 0 0 1 1.5-1.5H20M9 20v-3.5A1.5 1.5 0 0 0 7.5 15H4"/></svg>';
+const ICON_PLUS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>';
+const ICON_MINUS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg>';
+const ICON_CHEVRON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
+// The catalogue sheet icons arrive as glyphs from catalog.json; draw them as SVG so
+// they match the rest of the icon set (and never fall back to an unknown font glyph).
+const CATALOG_ICONS = {
+  '▤': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M4 10h16M10 10v10"/></svg>',
+  '●': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="2.4"/></svg>',
+  '▥': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="12" rx="2.2"/><path d="M12 6v12"/></svg>',
+  '◉': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="3.2"/></svg>',
+  '⬡': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2 5 7.2v9.6l7 4 7-4V7.2z"/></svg>',
+};
+const catalogIcon = (glyph) => CATALOG_ICONS[glyph] || (glyph ? escapeHtml(glyph) : '');
+
 // A `?v=` query is only a cache buster used by the self-update flow. Remove it as soon
 // as the document is in, so visitors always see the bare domain in the address bar.
 try {
@@ -87,7 +107,8 @@ function setTheme(light, remember = true) {
   if (switchRow) switchRow.setAttribute('aria-checked', String(!light));
   const toggle = $('#themeToggle');
   if (toggle) {
-    toggle.textContent = light ? '☾' : '☼';
+    // Sun while dark, moon while light — drawn as inline SVG so it matches the rest of the UI.
+    toggle.innerHTML = light ? ICON_MOON : ICON_SUN;
     toggle.setAttribute('aria-label', light ? 'فعال کردن حالت شب' : 'حالت روز');
   }
   const meta = document.querySelector('meta[name="theme-color"]');
@@ -110,7 +131,7 @@ $('#languageToggle').addEventListener('click', () => {
   applyLanguage(next);
   showToast(isEnglish() ? 'Language changed to English.' : 'زبان برنامه به فارسی تغییر کرد.');
 });
-$('#calculatorGuideToggle')?.addEventListener('click', () => { const guide=$('#calculatorGuide'); const button=$('#calculatorGuideToggle'); const open=!guide.hidden; guide.hidden=open; button.setAttribute('aria-expanded', String(!open)); button.querySelector('span').textContent=open?'＋':'－'; });
+$('#calculatorGuideToggle')?.addEventListener('click', () => { const guide=$('#calculatorGuide'); const button=$('#calculatorGuideToggle'); const open=!guide.hidden; guide.hidden=open; button.setAttribute('aria-expanded', String(!open)); button.querySelector('span').innerHTML=open?ICON_PLUS:ICON_MINUS; });
 
 $('#fullscreenToggle').addEventListener('click', async () => {
   try {
@@ -119,7 +140,7 @@ $('#fullscreenToggle').addEventListener('click', async () => {
   } catch { showToast('حالت تمام صفحه در این مرورگر در دسترس نیست'); }
 });
 document.addEventListener('fullscreenchange', () => {
-  $('#fullscreenToggle').textContent = document.fullscreenElement ? '×' : '⛶';
+  $('#fullscreenToggle').innerHTML = document.fullscreenElement ? ICON_COMPRESS : ICON_EXPAND;
 });
 
 let calculatorData = null;
@@ -181,7 +202,7 @@ async function loadCatalog() {
       const visibleRows = Math.min(entry.rows?.length || 0, 6);
       return `<article class="catalog-sheet glass-card" data-catalog-sheet="${escapeHtml(entry.id)}">
         <button class="catalog-sheet-head" type="button" aria-expanded="${index === 0 ? 'true' : 'false'}">
-          <span class="catalog-icon">${escapeHtml(entry.icon)}</span><span class="catalog-title"><strong>${escapeHtml(entry.name)}</strong><small>${escapeHtml(entry.subtitle)}</small></span><span class="catalog-count">${(entry.rows || []).length} ردیف</span><b class="catalog-chevron">⌄</b>
+          <span class="catalog-icon">${catalogIcon(entry.icon)}</span><span class="catalog-title"><strong>${escapeHtml(entry.name)}</strong><small>${escapeHtml(entry.subtitle)}</small></span><span class="catalog-count">${(entry.rows || []).length} ردیف</span><b class="catalog-chevron">${ICON_CHEVRON}</b>
         </button>
         <div class="catalog-sheet-body" ${index === 0 ? '' : 'hidden'}>
           <div class="catalog-table-wrap"><table class="catalog-table"><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table></div>
@@ -422,7 +443,7 @@ new MutationObserver(translateSoon).observe(document.documentElement, {
 // Direction is set right away so the very first paint is already LTR in English mode.
 if (isEnglish()) { document.documentElement.lang = 'en'; document.documentElement.dir = 'ltr'; }
 
-const i18nReady = fetch('i18n.json?v=1.2.3', { cache: 'no-store' })
+const i18nReady = fetch('i18n.json?v=1.2.4', { cache: 'no-store' })
   .then((response) => (response.ok ? response.json() : null))
   .then((payload) => { if (payload && payload.map) { compileI18n(payload); applyLanguage(currentLang, false); } })
   .catch(() => { /* without the dictionary the app simply stays Persian */ });
@@ -696,7 +717,7 @@ function labMatchCard(row, entered, useKey, direct) {
         <p class="match-reason">${labReason(row, entered, useKey, direct)}</p>
         <div class="match-actions">
           <button type="button" data-show-alloy="${escapeLab(alloy.code)}">جزئیات در دانشنامه آلیاژها<span class="ui-arrow" aria-hidden="true"></span></button>
-          <button type="button" data-add-compare="${escapeLab(alloy.code)}">＋ افزودن به مقایسه</button>
+          <button type="button" data-add-compare="${escapeLab(alloy.code)}"><span class="icon-plus-sm" aria-hidden="true">${ICON_PLUS}</span>افزودن به مقایسه</button>
         </div>
       </article>`;
 }
