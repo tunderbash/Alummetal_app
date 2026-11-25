@@ -528,11 +528,15 @@ LIVE_BLOCK = r'''
 244|Not available right now
 245|Pipe — wall thickness and weight per metre
 246|Pipe — inner diameter and bar length
-247|Outer diameter, wall thickness, weight per metre, inner diameter and bar length'''
+247|Outer diameter, wall thickness, weight per metre, inner diameter and bar length
+248|kg
+249|pcs
+250|Approximate weight'''
 
 PATTERNS_BLOCK = r'''
 وزن تقریبی: {0} کیلوگرم — چگالی {1} گرم بر سانتی‌متر مکعب|Approximate weight: {0} kg — density {1} g/cm³
 {0} گرم بر سانتی‌متر مکعب|{0} g/cm³
+{0} قطعه|{0} pcs
 {0} آلیاژ پیدا شد — چگالی‌ها تقریبی هستند.|{0} alloys found — densities are approximate.
 {0} آلیاژ برای مقایسه آماده است.|{0} alloys ready to compare.
 تطابق {0}٪|{0}% match

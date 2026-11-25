@@ -1,12 +1,14 @@
 {
-  "version": "1.2.5",
+  "version": "1.2.6",
   "date": "1405-09-04",
   "notes": [
-    "دو کاتالوگ لوله در یک کارت «کاتالوگ لوله» ادغام شد؛ جدول ضخامت و وزن و جدول قطر داخلی کنار هم هستند",
-    "نمایش شش ردیف نخست برای هر جدول جداگانه اعمال می‌شود"
+    "نتیجه محاسبه وزن خوانا شد: عدد وزن در خط بزرگ و چگالی و تعداد قطعه زیر آن با فونت کوچک‌تر",
+    "نگارش «محاسبه» در متن راهنمای ماشین‌حساب اصلاح شد",
+    "دو کاتالوگ لوله در یک کارت «کاتالوگ لوله» ادغام شد؛ جدول ضخامت و وزن و جدول قطر داخلی کنار هم هستند"
   ],
   "notesEn": [
-    "The two pipe catalogues are merged into one “Pipe catalogue” card; the wall-thickness table and the inner-diameter table sit together",
-    "The six-row preview limit now applies to each table separately"
+    "The weight result is now easy to read: the weight on a large line, with density and piece count in small print below",
+    "Fixed the wording of the calculator guide text",
+    "The two pipe catalogues are merged into one “Pipe catalogue” card; the wall-thickness table and the inner-diameter table sit together"
   ]
 }

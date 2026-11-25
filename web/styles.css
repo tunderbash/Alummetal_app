@@ -557,3 +557,20 @@ body.light .comparison-row>span{color:#4d6c77}
 .catalog-section-title{font-size:11px;font-weight:900;color:var(--orange);margin:9px 3px 6px}
 .catalog-sheet-body .catalog-table-wrap+.catalog-section-title{margin-top:12px}
 body.light .catalog-section-title{color:#b25a17}
+
+/* Calculation result: the answer on a big line, its inputs as small print. The old single
+   pale-green sentence was hard to read, especially in the light theme. */
+.result-box{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:13px 10px}
+.result-box .result-label{font-size:10px;font-weight:700;color:var(--muted);line-height:1.4}
+.result-box .result-weight{display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:5px;font-size:12px;font-weight:700;color:var(--text);line-height:1.6}
+.result-box .result-weight b{font-size:26px;font-weight:900;color:#7bf0b2;letter-spacing:.5px;direction:ltr;unicode-bidi:isolate}
+.result-box .result-density,.result-box .result-pieces{display:block;font-size:11px;font-weight:400;color:var(--muted);line-height:1.8}
+.result-box .result-pieces{color:#8ad9c7}
+body.light .result-box{background:rgba(20,150,110,.09);border-color:rgba(16,124,96,.24)}
+body.light .result-box .result-label{color:#40606a}
+body.light .result-box .result-weight{color:#12313b}
+body.light .result-box .result-weight b{color:#0b6b48}
+body.light .result-box .result-density{color:#40606a}
+body.light .result-box .result-pieces{color:#116b52}
+.result-box.is-error{color:#ffc9a6;border-color:rgba(255,117,31,.45);background:rgba(255,117,31,.13);font-size:11px;line-height:1.8}
+body.light .result-box.is-error{color:#a2400f;border-color:rgba(178,90,23,.45);background:rgba(255,117,31,.1)}

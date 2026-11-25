@@ -176,7 +176,8 @@ $('#calculateButton').addEventListener('click', () => {
   const length = Number($('#lengthInput').value), first = Number($('#widthInput').value), second = Number($('#thicknessInput').value), quantity = Number($('#quantityInput').value || 1);
   const result = $('#weightResult');
   const requiresThird = ['sheet','square','flat','tube'].includes(shapeSelect.value);
-  if (![length, first, quantity].every((value) => value > 0) || (requiresThird && second <= 0)) { result.textContent = 'لطفاً همه ابعاد لازم را با عدد مثبت وارد کنید.'; return; }
+  if (![length, first, quantity].every((value) => value > 0) || (requiresThird && second <= 0)) { result.classList.add('is-error'); result.textContent = 'لطفاً همه ابعاد لازم را با عدد مثبت وارد کنید.'; return; }
+  result.classList.remove('is-error');
   const density = calculatorData?.alloys.find((alloy) => alloy.id === alloySelect.value)?.density || 2.70;
   let volume;
   if (shapeSelect.value === 'round') volume = Math.PI * (first / 2) ** 2 * length;
@@ -184,7 +185,14 @@ $('#calculateButton').addEventListener('click', () => {
   else if (shapeSelect.value === 'hex') volume = (3 * Math.sqrt(3) / 2) * (first ** 2) * length;
   else volume = length * first * second;
   const weight = (volume * density * quantity) / 1000000;
-  result.textContent = `وزن تقریبی: ${weight.toFixed(3)} کیلوگرم — چگالی ${density} گرم بر سانتی‌متر مکعب`;
+  // The weight is the answer the visitor came for, so it gets its own big line; the density
+  // (and the piece count when it is more than one) is small print below it. The markup is
+  // always written in Persian: the language layer translates these words through i18n.json,
+  // so switching language later still works without re-calculating.
+  result.innerHTML = `<span class="result-label">وزن تقریبی</span>`
+    + `<strong class="result-weight"><b>${formatWeight(weight)}</b> کیلوگرم</strong>`
+    + `<small class="result-density"><span>چگالی</span> <span>${formatWeight(density)} گرم بر سانتی‌متر مکعب</span></small>`
+    + (quantity > 1 ? `<span class="result-pieces">${faDigits(quantity)} قطعه</span>` : '');
 });
 loadCalculator();
 
@@ -294,6 +302,12 @@ function renderComparison() {
 const escapeLab = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[char]));
 // Persian digits are the default, but in English mode the numbers stay ASCII.
 const toFaDigits = (value) => (isEnglish() ? String(value) : String(value).replace(/[0-9]/g, (digit) => '۰۱۲۳۴۵۶۷۸۹'[Number(digit)]));
+// Numbers inside the weight result: up to three decimals with no trailing zeros. The markup
+// always holds the Persian form («۵٫۷۰۴»); the language layer turns those digits into ASCII
+// in English mode (NUMBER_ONLY + asciiNumber), so switching language never leaves the wrong
+// digits behind. `faDigits` is therefore independent of the current language.
+const faDigits = (value) => String(value).replace(/[0-9]/g, (digit) => '۰۱۲۳۴۵۶۷۸۹'[Number(digit)]);
+const formatWeight = (value) => faDigits(Number(value).toFixed(3).replace(/\.?0+$/, '')).replace('.', '٫');
 const toAsciiDigits = (value) => String(value ?? '').replace(/[۰-۹٠-٩]/g, (digit) => String('۰۱۲۳۴۵۶۷۸۹٠١٢٣٤٥٦٧٨٩'.indexOf(digit) % 10));
 
 // Persian and Arabic keyboards type their own digits and separators, so «۰٫۴۵» and
@@ -454,7 +468,7 @@ new MutationObserver(translateSoon).observe(document.documentElement, {
 // Direction is set right away so the very first paint is already LTR in English mode.
 if (isEnglish()) { document.documentElement.lang = 'en'; document.documentElement.dir = 'ltr'; }
 
-const i18nReady = fetch('i18n.json?v=1.2.5', { cache: 'no-store' })
+const i18nReady = fetch('i18n.json?v=1.2.6', { cache: 'no-store' })
   .then((response) => (response.ok ? response.json() : null))
   .then((payload) => { if (payload && payload.map) { compileI18n(payload); applyLanguage(currentLang, false); } })
   .catch(() => { /* without the dictionary the app simply stays Persian */ });

@@ -32,7 +32,7 @@
 مقطع و آلیاژ را مطابق محصولات آلوم متال انتخاب کنید.	Pick the section and alloy that match Alum Metal products.
 راهنمای استفاده	How to use
 چطور وزن را حساب کنیم؟	How is the weight calculated?
-ابتدا مقطع و آلیاژ را انتخاب کنید، سپس طول و اندازه‌های مشخص‌شده روی تصویر را به میلی‌متر وارد کنید. برای چند قطعه، تعداد را تغییر دهید و دکمهٔ محاسبهٔ وزن را بزنید.	First choose the section and the alloy, then enter the length and the dimensions marked on the drawing in millimetres. For several pieces change the quantity and press the weight button.
+ابتدا مقطع و آلیاژ را انتخاب کنید، سپس طول و اندازه‌های مشخص‌شده روی تصویر را به میلی‌متر وارد کنید. برای چند قطعه، تعداد را تغییر دهید و دکمهٔ محاسبه وزن را بزنید.	First choose the section and the alloy, then enter the length and the dimensions marked on the drawing in millimetres. For several pieces change the quantity and press the weight button.
 حروف روی تصویر، اندازه‌هایی هستند که باید در کادرهای پایین وارد شوند.	The letters on the drawing are the dimensions you enter in the boxes below.
 نوع مقطع	Section type
 راهنمای اندازه‌گذاری مقطع	Section dimension guide
@@ -705,10 +705,14 @@ A356.0 — ریختگی دقیق و قطعات سبک	<pattern/skip>
 لوله — ضخامت و وزن هر متر	Pipe — wall thickness and weight per metre
 لوله — قطر داخلی و طول شاخه	Pipe — inner diameter and bar length
 قطر خارجی، ضخامت، وزن هر متر، قطر داخلی و طول شاخه	Outer diameter, wall thickness, weight per metre, inner diameter and bar length
+کیلوگرم	kg
+قطعه	pcs
+وزن تقریبی	Approximate weight
 
 ---- patterns ----
 وزن تقریبی: {0} کیلوگرم — چگالی {1} گرم بر سانتی‌متر مکعب	Approximate weight: {0} kg — density {1} g/cm³
 {0} گرم بر سانتی‌متر مکعب	{0} g/cm³
+{0} قطعه	{0} pcs
 {0} آلیاژ پیدا شد — چگالی‌ها تقریبی هستند.	{0} alloys found — densities are approximate.
 {0} آلیاژ برای مقایسه آماده است.	{0} alloys ready to compare.
 تطابق {0}٪	{0}% match
