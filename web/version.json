@@ -1,16 +1,12 @@
 {
-  "version": "1.2.4",
-  "date": "1405-09-02",
+  "version": "1.2.5",
+  "date": "1405-09-04",
   "notes": [
-    "آیکون‌های دکمهٔ تم، تمام‌صفحه، بستهٔ منو و کاتالوگ یکدست و خوش‌رنگ شدند",
-    "رفع مشکل قاب دور صفحه در نسخهٔ کامپیوتر",
-    "به‌روزرسانی اطلاعات کاتالوگ و آلیاژها از این پس سریع‌تر اعمال می‌شود",
-    "حذف آدرس دفتر مرکزی از صفحهٔ تماس"
+    "دو کاتالوگ لوله در یک کارت «کاتالوگ لوله» ادغام شد؛ جدول ضخامت و وزن و جدول قطر داخلی کنار هم هستند",
+    "نمایش شش ردیف نخست برای هر جدول جداگانه اعمال می‌شود"
   ],
   "notesEn": [
-    "The theme, fullscreen, menu-close and catalogue icons are now consistent and cleaner",
-    "Fixed the frame that appeared around the whole page on desktop",
-    "Catalogue and alloy information now updates faster",
-    "Removed the head-office address from the contact screen"
+    "The two pipe catalogues are merged into one “Pipe catalogue” card; the wall-thickness table and the inner-diameter table sit together",
+    "The six-row preview limit now applies to each table separately"
   ]
 }

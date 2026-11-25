@@ -473,6 +473,8 @@ main:focus,main:focus-visible{outline:none}
 #catalogList>.seo-sheet{margin-bottom:14px}
 #catalogList>.seo-sheet h3{font-size:14px;margin:0 0 3px;color:var(--text)}
 #catalogList>.seo-sheet p{font-size:10px;color:var(--muted);margin:0 0 7px}
+#catalogList>.seo-sheet h4.seo-subheading{font-size:11px;font-weight:700;color:var(--orange);margin:10px 0 5px}
+#catalogList>.seo-sheet .seo-scroll+.seo-subheading{margin-top:12px}
 .seo-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
 .seo-table{border-collapse:collapse;width:100%;font-size:10px}
 .seo-table th,.seo-table td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
@@ -548,3 +550,10 @@ body.light .comparison-row>span{color:#4d6c77}
 .catalog-chevron svg{width:18px;height:18px;display:block}
 .icon-plus-sm{display:inline-grid;place-items:center;width:13px;height:13px;margin-inline-end:5px;vertical-align:-2px}
 .icon-plus-sm svg{width:13px;height:13px;display:block}
+
+/* A catalogue sheet may hold more than one table (the pipe sheet: wall thickness and
+   inner diameter). Each inner table gets a small title; the existing 6-row limit already
+   applies per table because it selects `.catalog-table tbody tr`. */
+.catalog-section-title{font-size:11px;font-weight:900;color:var(--orange);margin:9px 3px 6px}
+.catalog-sheet-body .catalog-table-wrap+.catalog-section-title{margin-top:12px}
+body.light .catalog-section-title{color:#b25a17}

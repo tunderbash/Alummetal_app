@@ -525,7 +525,10 @@ LIVE_BLOCK = r'''
 241|Link copied.
 242|Alum Metal Arak app: section weight calculator, product catalogue and alloy database
 243|Could not copy; select the address manually.
-244|Not available right now'''
+244|Not available right now
+245|Pipe — wall thickness and weight per metre
+246|Pipe — inner diameter and bar length
+247|Outer diameter, wall thickness, weight per metre, inner diameter and bar length'''
 
 PATTERNS_BLOCK = r'''
 وزن تقریبی: {0} کیلوگرم — چگالی {1} گرم بر سانتی‌متر مکعب|Approximate weight: {0} kg — density {1} g/cm³
@@ -535,6 +538,7 @@ PATTERNS_BLOCK = r'''
 تطابق {0}٪|{0}% match
 {0} ردیف|{0} rows
 نمایش {0} ردیف نخست|Show the first {0} rows
+نمایش {0} ردیف نخست هر جدول|Show the first {0} rows of each table
 نسخهٔ {0} — تاریخ انتشار {1}|Version {0} — released {1}
 نسخهٔ {0}|Version {0}
 سری {0}|Series {0}

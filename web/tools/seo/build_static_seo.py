@@ -36,18 +36,28 @@ def catalog_html(data):
     parts = ['<h2 class="seo-heading">کاتالوگ محصولات آلوم متال</h2>',
              '<p class="seo-lead">جدول‌های زیر آلیاژها، تمپر، ابعاد و ضخامت قابل تأمین را نشان می‌دهند.</p>']
     for sheet in data.get('catalogs', []):
-        headers = sheet.get('headers') or []
-        rows = sheet.get('rows') or []
-        head = ''.join(f'<th>{esc(h)}</th>' for h in headers)
-        body = ''.join(
-            '<tr>' + ''.join(f'<td>{esc(c)}</td>' for c in row) + '</tr>'
-            for row in rows
-        )
+        # A sheet is either one flat table or a list of inner tables (`sections`), e.g. the
+        # pipe sheet holds the wall-thickness table and the inner-diameter table.
+        sections = sheet.get('sections') or [sheet]
+        tables = []
+        for section in sections:
+            headers = section.get('headers') or []
+            rows = section.get('rows') or []
+            head = ''.join(f'<th>{esc(h)}</th>' for h in headers)
+            body = ''.join(
+                '<tr>' + ''.join(f'<td>{esc(c)}</td>' for c in row) + '</tr>'
+                for row in rows
+            )
+            title = section.get('title')
+            tables.append(
+                (f'<h4 class="seo-subheading">{esc(title)}</h4>' if title and len(sections) > 1 else '')
+                + f'<div class="seo-scroll"><table class="seo-table"><thead><tr>{head}</tr></thead>'
+                f'<tbody>{body}</tbody></table></div>'
+            )
         parts.append(
             f'<section class="seo-sheet"><h3>{esc(sheet.get("name"))}</h3>'
             f'<p>{esc(sheet.get("subtitle"))}</p>'
-            f'<div class="seo-scroll"><table class="seo-table"><thead><tr>{head}</tr></thead>'
-            f'<tbody>{body}</tbody></table></div></section>'
+            f'{"".join(tables)}</section>'
         )
     return ''.join(parts)
 
