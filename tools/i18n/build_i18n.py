@@ -531,7 +531,17 @@ LIVE_BLOCK = r'''
 247|Outer diameter, wall thickness, weight per metre, inner diameter and bar length
 248|kg
 249|pcs
-250|Approximate weight'''
+250|Approximate weight
+251|Box section catalogue
+252|Dimensions, wall thickness and weight per bar
+253|Box section size
+254|Weight per bar
+255|Angle catalogue
+256|Dimensions, type, thickness and weight per bar
+257|Angle size
+258|Type
+259|Plain
+260|Ribbed'''
 
 PATTERNS_BLOCK = r'''
 وزن تقریبی: {0} کیلوگرم — چگالی {1} گرم بر سانتی‌متر مکعب|Approximate weight: {0} kg — density {1} g/cm³

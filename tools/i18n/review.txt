@@ -708,6 +708,16 @@ A356.0 — ریختگی دقیق و قطعات سبک	<pattern/skip>
 کیلوگرم	kg
 قطعه	pcs
 وزن تقریبی	Approximate weight
+کاتالوگ قوطی	Box section catalogue
+ابعاد، ضخامت و وزن هر شاخه	Dimensions, wall thickness and weight per bar
+سایز قوطی	Box section size
+وزن شاخه	Weight per bar
+کاتالوگ نبشی	Angle catalogue
+ابعاد، نوع، ضخامت و وزن هر شاخه	Dimensions, type, thickness and weight per bar
+سایز نبشی	Angle size
+نوع	Type
+ساده	Plain
+آجدار	Ribbed
 
 ---- patterns ----
 وزن تقریبی: {0} کیلوگرم — چگالی {1} گرم بر سانتی‌متر مکعب	Approximate weight: {0} kg — density {1} g/cm³

@@ -1,12 +1,10 @@
 {
-  "version": "1.2.6",
-  "date": "1405-09-04",
+  "version": "1.2.7",
+  "date": "1405-09-07",
   "notes": [
-    "نتیجه محاسبه وزن خوانا شد: عدد وزن در خط بزرگ و چگالی و تعداد قطعه زیر آن با فونت کوچک‌تر",
-    "دو کاتالوگ لوله در یک کارت «کاتالوگ لوله» ادغام شد؛ جدول ضخامت و وزن و جدول قطر داخلی کنار هم هستند"
+    "دو کاتالوگ جدید اضافه شد: «کاتالوگ قوطی» با سایز، ضخامت و وزن شاخه و «کاتالوگ نبشی» با سایز، نوع (ساده/آجدار)، ضخامت، طول و وزن شاخه"
   ],
   "notesEn": [
-    "The weight result is now easy to read: the weight on a large line, with density and piece count in small print below",
-    "The two pipe catalogues are merged into one “Pipe catalogue” card; the wall-thickness table and the inner-diameter table sit together"
+    "Two new catalogues: “Box section catalogue” with size, wall thickness and weight per bar, and “Angle catalogue” with size, type (plain/ribbed), thickness, length and weight per bar"
   ]
 }
